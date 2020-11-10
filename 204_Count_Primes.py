@@ -21,3 +21,31 @@ Constraints:
 
 0 <= n <= 5 * 106'''
 
+
+class Solution(object):
+    def countPrimes(self, n):
+        """
+        :type n: int
+        :rtype: int
+        """
+        # My own way
+        if n <= 2:
+            return 0
+
+        isPrime = [True] * n
+        for i in range(2, n):
+            if isPrime[i]:  # Number of index i is a prime number
+                j = 2  # Times start from 2
+                while i * j < n:
+                    isPrime[i * j] = False
+                    j += 1
+            else:
+                continue
+
+        cnt = 0
+        for i in range(2, n):
+            if isPrime[i]:
+                cnt += 1
+
+        return cnt
+

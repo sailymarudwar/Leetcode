@@ -28,4 +28,13 @@ class Solution:
 
 
 sol = Solution()
-sol.removeDuplicates([1, 1, 2, 3, 3, 3, 5, 5, 5, 6, 9])
+print(sol.removeDuplicates([1, 1, 2, 3, 3, 3, 5, 5, 5, 6, 9]))
+
+'''class Solution:
+    def removeDuplicates(self, nums: List[int]) -> int:        
+                
+        for i in reversed(range(len(nums))):
+            if nums.count(nums[i]) > 1 :
+                del nums[i]
+        
+        return(len(nums))'''
